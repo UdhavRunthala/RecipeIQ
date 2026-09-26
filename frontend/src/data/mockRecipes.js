@@ -1,0 +1,88 @@
+// status: "ready" (all ingredients on hand) | "missing" (some ingredients missing)
+// Full ingredients/instructions are filled in only for recipe id 1 as a working example —
+// we'll fill in the rest once this pattern is confirmed to work.
+export const mockRecipes = [
+  {
+    id: 1,
+    title: "Crispy Skillet Salmon with Asparagus",
+    description: "Crisped wild salmon finished with lemon butter, pantry garlic, and tender spring asparagus.",
+    time: "20 mins",
+    tag: "High Protein",
+    status: "ready",
+    missingItems: [],
+    calories: 540,
+    ingredients: [
+      { name: "Salmon fillet", quantity: "200g (1 cut)", available: true },
+      { name: "Asparagus spears", quantity: "150g (bunch)", available: true },
+      { name: "Fresh garlic", quantity: "2 cloves", available: true },
+      { name: "Extra virgin olive oil", quantity: "1.5 tbsp", available: true },
+      { name: "Organic lemon", quantity: "1 whole", available: true },
+    ],
+    instructions: [
+      {
+        title: "Prep the Skillet & Sear the Salmon",
+        content: "Pat the salmon fillet thoroughly dry with a clean kitchen towel — moisture is the enemy of crisp skin. Season generously with flaky sea salt. Heat 1 tablespoon of extra virgin olive oil in a heavy stainless or cast-iron skillet over medium-high heat until shimmering. Place the salmon skin-side down, press gently for 10 seconds, and sear untouched for 5-6 minutes until crisp and golden.",
+        tip: "Don't move the fillet until it naturally releases from the pan.",
+      },
+      {
+        title: "Flip Salmon & Char the Lemon",
+        content: "Carefully flip the fillet using a thin fish spatula. Cut the lemon in half and place it cut-side down directly on the hot skillet surface. Smash the garlic cloves lightly and scatter into the pan's ambient oil. Cook for an additional 3-4 minutes until the salmon is just cooked through and the lemon surface is aromatic, caramelized, and blistered.",
+      },
+      {
+        title: "Sauté Asparagus & Plate",
+        content: "Transfer the salmon and charred lemons to a warm serving plate to rest. Toss the trimmed asparagus spears into the remaining garlic-infused pan drippings. Sauté briskly over medium heat for 3 minutes until tender-crisp and bright green. Plate beside the salmon and squeeze the warm, charred lemon juice generously over both.",
+        tip: "This meal fully utilizes 1 lemon and asparagus bunch flagged as approaching maturity.",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Creamy Herb Omelet",
+    description: "Silky pasture-raised eggs whisked with fresh chives, garden parsley, and a hint of cream.",
+    time: "12 mins",
+    tag: "Quick & Easy",
+    status: "ready",
+    missingItems: [],
+    calories: 320,
+  },
+  {
+    id: 3,
+    title: "Mediterranean Quinoa Salad",
+    description: "Crisp cucumber, pantry quinoa, and ripe tomatoes with an oregano-infused dressing.",
+    time: "18 mins",
+    tag: "Fresh & Fiber",
+    status: "missing",
+    missingItems: ["Feta"],
+    calories: 410,
+  },
+  {
+    id: 4,
+    title: "Garlic Butter Chickpeas & Wilted Greens",
+    description: "Pantry chickpeas crisped in browned garlic butter and folded into hearty greens.",
+    time: "15 mins",
+    tag: "Plant-Based",
+    status: "ready",
+    missingItems: [],
+    calories: 380,
+  },
+  {
+    id: 5,
+    title: "Sesame Ginger Broth Noodles",
+    description: "Quick comfort noodles tossed in fragrant ginger, tamari, and warm sesame oil.",
+    time: "15 mins",
+    tag: "Pantry Staple",
+    status: "missing",
+    missingItems: ["Sesame oil", "Scallions"],
+    calories: 460,
+  },
+  {
+    id: 6,
+    title: "Poached Egg on Seeded Sourdough",
+    description: "Toasted sourdough, soft poached egg, olive oil drizzle, and sea salt with chili.",
+    time: "10 mins",
+    tag: "Energizing Breakfast",
+    status: "ready",
+    missingItems: [],
+    calories: 310,
+  },
+];
