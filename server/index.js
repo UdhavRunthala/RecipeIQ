@@ -2,6 +2,16 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
+// HOISTING: these are all `const`, not `var`. With `var`, each of these
+// names would be hoisted to the top of the file AND initialized to
+// `undefined` immediately — meaning a bug like accidentally calling
+// `app.use("/api/pantry", pantryRoutes)` ABOVE this line would silently
+// pass `undefined` as the router instead of throwing an error, and Express
+// would fail confusingly at request time instead of at startup.
+// `const` is hoisted too, but left in a "temporal dead zone" — accessing it
+// before its declaration throws immediately, which surfaces ordering bugs
+// like that the moment the file loads, not later during a request.
+
 const errorHandler = require("./middleware/errorHandler.middleware");
 const authRoutes = require("./routes/auth.routes");
 const pantryRoutes = require("./routes/pantry.routes");
