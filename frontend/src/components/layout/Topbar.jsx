@@ -1,6 +1,13 @@
 import { Search, Bell, SlidersHorizontal } from "lucide-react";
+import useDebouncedSearch from "../../hooks/useDebouncedSearch";
 
-export default function Topbar({ searchPlaceholder = "Search pantry, recipes or ingredients..." }) {
+export default function Topbar({ searchPlaceholder = "Search pantry, recipes or ingredients...", onSearch }) {
+  // onSearch is expected to be an async function provided by the parent
+  // page (e.g. filtering pantry items, or eventually calling a real
+  // search endpoint) — this component doesn't care how it's implemented,
+  // only that it returns a Promise.
+  const [searchValue, setSearchValue] = useDebouncedSearch(onSearch || (() => {}));
+
   return (
     <header className="h-16 flex items-center justify-between px-8 border-b border-gray-200 bg-white">
       <div className="relative w-96">
@@ -8,6 +15,8 @@ export default function Topbar({ searchPlaceholder = "Search pantry, recipes or 
         <input
           type="text"
           placeholder={searchPlaceholder}
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
           className="w-full bg-gray-50 border border-gray-200 rounded-lg pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-200"
         />
       </div>
